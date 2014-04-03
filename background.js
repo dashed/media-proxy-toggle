@@ -15,9 +15,9 @@ setproxy = function() {
 
     badge.text = enable ? "on" : "off";
 
-    chrome.browserAction.setBadgeBackgroundColor(enable ? BADGE_ACTIVE : BADGE_INACTIVE);
-
     chrome.browserAction.setBadgeText(badge);
+
+    chrome.browserAction.setBadgeBackgroundColor(enable ? BADGE_ACTIVE : BADGE_INACTIVE);
 
     enable ? chrome.proxy.settings.set(proxy) : chrome.proxy.settings.clear({scope: proxy.scope});
 };
